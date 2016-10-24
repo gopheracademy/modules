@@ -12,7 +12,7 @@ type Customer struct {
 
 func (c *Customer) Error() string {
 	if c.Error != nil {
-		return fmt.Sprintf("Error: %s", c.ErrMessage())
+		return fmt.Sprintf("Error: %s", c.ErrMsg)
 	}
 	return nil
 }

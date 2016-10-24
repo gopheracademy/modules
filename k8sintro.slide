@@ -1,0 +1,250 @@
+Containers and Kubernetes: From scratch to production in two days
+
+Brian Ketelsen
+me@brianketelsen.com
+@bketelsen
+
+* Introduction
+
+Brian Ketelsen
+@bketelsen 
+.link https://brianketelsen.com https://www.brianketelsen.com
+.link https://gotime.fm GoTime.FM
+.link https://www.gophercon.com GopherCon.com
+.link https://blog.gopheracademy.com Gopher Academy
+.link https://kubernetes.academy Kubernetes Academy - coming soon 
+
+*Very*Early* Kubernetes adopter.  Clusters in production for 2+ years.  Contributed initial DNS implementation based on SkyDNS.
+
+
+* Blah Blah Blah
+
+WORDS???
+
+No, today is about ACTION!
+
+.link https://gophertrain.com/enroll
+
+Sure, there will be some lecture, but this is a hands-on class.  You will leave with experience CREATING, OPERATING, and DEPLOYING to Kubernetes.
+
+* Kubernetes Introduction
+
+Kubernetes -- "k8s" -- is an open-source system for automating deployment, scaling, and management of containerized applications.
+
+* Major Kubernetes Features
+
+* Automatic binpacking
+
+Automatically places containers based on their resource requirements and other constraints, while not sacrificing availability. Mix critical and best-effort workloads in order to drive up utilization and save even more resources.
+
+- Utilization improvements are dramatic.
+- Best utilization requires some annotations during deployment.
+
+* Horizontal scaling
+
+Scale your application up and down with a simple command, with a UI, or automatically based on CPU usage.
+
+- Manually from terminal or UI
+- Automatically with "Horizontal Pod Autoscaling"
+
+* Self-healing
+
+Restarts containers that fail, replaces and reschedules containers when nodes die, kills containers that don’t respond to your user-defined health check, and doesn’t advertise them to clients until they are ready to serve.
+
+- In practice this is very rubust and trust-inspiring.
+- Load tests with random node unplugging produced 0 errors.
+
+* Service discovery and load balancing
+
+No need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives containers their own IP addresses and a single DNS name for a set of containers, and can load-balance across them.
+
+- Game changing if you've used any other method of service-discovery.
+- Load balancing across pods by service type.
+
+* Automated rollouts and rollbacks
+
+Kubernetes progressively rolls out changes to your application or its configuration, while monitoring application health to ensure it doesn’t kill all your instances at the same time. If something goes wrong, Kubernetes will rollback the change for you. Take advantage of a growing ecosystem of deployment solutions.
+
+- Excellent support for A/B, canary, etc rollouts.
+
+* Secret and configuration management
+
+Deploy and update secrets and application configuration without rebuilding your image and without exposing secrets in your stack configuration.
+
+- Expose secrets to your containers as embedded text files (.ini .yaml, .json) 
+- OR as ENV Variables
+- OR as command line flags to a binary in your pod
+
+* Batch execution
+
+In addition to services, Kubernetes can manage your batch and CI workloads, replacing containers that fail, if desired.
+
+- Perfect for CI jobs.
+- Job scheduling can be tweaked for performance (queues vs 1 task:1 worker)
+
+* Terminology
+
+* Cluster
+
+A cluster is a set of physical or virtual machines and other infrastructure resources used by Kubernetes to run your applications.
+
+* Node
+
+A node is a physical or virtual machine running Kubernetes, onto which pods can be scheduled.
+
+* Pod
+
+A pod is a co-located group of containers and volumes.
+
+- Pods are the _atom_ of deployment in Kubernetes.
+
+* Label
+
+A label is a key/value pair that is attached to a resource, such as a pod, to convey a user-defined identifying attribute. Labels can be used to organize and to select subsets of resources.
+
+- CORE concept in Kubernetes, used everywhere
+
+* Selector
+
+A selector is an expression that matches labels in order to identify related resources, such as which pods are targeted by a load-balanced service.
+
+* Replication Controller
+
+A replication controller ensures that a specified number of pod replicas are running at any one time. It both allows for easy scaling of replicated systems and handles re-creation of a pod when the machine it is on reboots or otherwise fails.
+
+* Replica Set
+
+Replica Set is the next-generation Replication Controller. The only difference between a Replica Set and a Replication Controller right now is the selector support. Replica Set supports the new set-based selector requirements as described in the labels user guide whereas a Replication Controller only supports equality-based selector requirements.
+
+- New selectors are more powerful
+
+	partition in (customerA, customerB),environment!=qa
+
+* Service
+
+A service defines a set of pods and a means by which to access them, such as single stable IP address and corresponding DNS name.
+
+* Deployment
+
+A Deployment provides declarative updates for Pods and Replica Sets. You only need to describe the desired state in a Deployment object, and the Deployment controller will change the actual state to the desired state at a controlled rate for you. You can define Deployments to create new resources, or replace existing ones by new ones.
+
+* Deployment
+
+	apiVersion: extensions/v1beta1
+	  kind: Deployment
+	metadata:
+	  name: nginx-deployment
+	spec:
+	  replicas: 3
+	  template:
+	    metadata:
+	      labels:
+	        app: nginx
+	    spec:
+	      containers:
+	        - name: nginx
+		  image: nginx:1.7.9
+		  ports:
+		    - containerPort: 80
+
+* Volume
+
+A volume is a directory, possibly with some data in it, which is accessible to a Container as part of its filesystem. Kubernetes volumes build upon Docker Volumes, adding provisioning of the volume directory and/or device.
+
+* Secret 
+
+A secret stores sensitive data, such as authentication tokens, which can be made available to containers upon request.
+
+* Name
+
+A user- or client-provided name for a resource.
+
+* Namespace
+
+A namespace is like a prefix to the name of a resource. Namespaces help different projects, teams, or customers to share a cluster, such as by preventing name collisions between unrelated teams.
+
+* Annotation
+
+A key/value pair that can hold larger (compared to a label), and possibly not human-readable, data, intended to store non-identifying auxiliary data, especially data manipulated by tools and system extensions. Efficient filtering by annotation values is not supported.
+
+
+* Daemon Set
+
+A Daemon Set ensures that all (or some) nodes run a copy of a pod. As nodes are added to the cluster, pods are added to them. As nodes are removed from the cluster, those pods are garbage collected. Deleting a Daemon Set will clean up the pods it created.
+
+- Log forwarder
+- Heapster/Node Monitoring
+- Statsd/DataDog collector
+- etc
+
+* Ingress
+
+An Ingress is a collection of rules that allow inbound connections to reach the cluster services.
+
+It can be configured to give services externally-reachable urls, load balance traffic, terminate SSL, offer name based virtual hosting etc. Users request ingress by POSTing the Ingress resource to the API server. An Ingress controller is responsible for fulfilling the Ingress, usually with a loadbalancer, though it may also configure your edge router or additional frontends to help handle the traffic in an HA manner.
+
+* Pet Sets 
+
+Origination (Pets vs. Cattle) A PetSet ensures that a specified number of “pets” with unique identities are running at any given time. The identity of a Pet is comprised of:
+
+- a stable hostname, available in DNS
+- an ordinal index
+- stable storage: linked to the ordinal & hostname
+
+These properties are useful in deploying stateful applications. However most stateful applications are also clustered, meaning they form groups with strict membership requirements that rely on stored state. PetSet also helps with the 2 most common problems encountered managing such clustered applications:
+
+- discovery of peers for quorum - etcd/zookeeper/consul
+- startup/teardown ordering - mysql cluster, HA database setup
+
+* Deeper Dive into Kubernetes Components
+
+* Master
+
+- kube-apiserver
+- etcd
+- kube-controller-manager
+- kube-scheduler
+
+* Node
+
+- kubelet
+- kube-proxy
+- container runtime (docker/rkt)
+
+
+
+* Addons
+
+Third-party services that provide additional control or features to your cluster
+
+- DNS Addon (SkyDNS)
+- Network Policy
+- Kubernetes Dashboard/UI
+- Logging
+- Helm (package manager for Kubernetes applications)
+
+* Kubernetes 101
+
+Hands On Lab
+
+.link https://docs.google.com/presentation/d/1n3avmL5GCYCYJEr8pLFBKe0wzvoOiUV2vxyW_pYFL5s/edit?usp=sharing Slides
+.link https://github.com/GoogleCloudPlatform/kubernetes-workshops/blob/master/bundles/kubernetes-101/workshop Workshop
+
+* Kubernets 102
+
+.link https://docs.google.com/presentation/d/1JP6-utzrocigFpVyd9IFoZmjPV5vxGhiOONT36XBF_o/edit?usp=sharing Slides
+.link https://github.com/GoogleCloudPlatform/kubernetes-workshops/blob/master/core-concepts/local.md Workshop
+
+* Storing State
+
+.link https://docs.google.com/presentation/d/1av0gZl90NS2oPm2u5utht7fZums76fvsh-hqt_JMzJE/edit?usp=sharing Slides
+.link https://github.com/GoogleCloudPlatform/kubernetes-workshops/blob/master/state/local.md Workshop
+
+* Advanced Concepts
+
+.link https://docs.google.com/presentation/d/1_mWY3fTavAYjD9twABOOEE0dRVz8YeMpeJ0s1GgvHpk/edit?usp=sharing Slides
+.link https://github.com/GoogleCloudPlatform/kubernetes-workshops/blob/master/advanced/local.md Workshop
+
+* Bonus Round
+
+Ingress & Load Balancing Options

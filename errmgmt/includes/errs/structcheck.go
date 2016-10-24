@@ -11,7 +11,7 @@ func Login(u, p string) (*Customer, error) {
 	if err != nil {
 		return nil, NewError(LoginFailed)
 	}
-	return &Customer, nil
+	return cust, nil
 }
 
 func main() {
