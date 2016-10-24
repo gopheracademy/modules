@@ -5,3 +5,10 @@ me@brianketelsen.com
 @bketelsen
 
 * Distributed Tracing
+
+* End-to-end visibility into distributed applications
+* Tying distributed requests together
+* Generating unique request identifiers
+* Building a distributed trace service
+* OpenTracing
+* LightStep, Appdash, Zipkin

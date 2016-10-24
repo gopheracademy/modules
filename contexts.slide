@@ -5,3 +5,9 @@ me@brianketelsen.com
 @bketelsen
 
 * Contexts
+
+* Go’s Context package
+* Cancellation
+* Timeouts
+* Embedding metadata in a request
+* Reading metadata from a response

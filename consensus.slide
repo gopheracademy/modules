@@ -5,3 +5,10 @@ me@brianketelsen.com
 @bketelsen
 
 * Consensus
+
+* Sharing a common state across systems
+* Agreeing on changes across systems
+* Distributed consensus
+* Raft, Paxos, Zab
+* Building your own consensus using Go libraries
+* Using Etcd and Consul for distributed consensus

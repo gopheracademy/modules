@@ -5,3 +5,10 @@ me@brianketelsen.com
 @bketelsen
 
 * Offline and Nearline Processing
+
+* Creating services that process data outside the application request/response flow
+* Nearline and offline processing
+* Queues and communication options
+* Nearline asynchronous processing
+* Offline processing
+* Helpful Go tools and libraries

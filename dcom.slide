@@ -5,3 +5,64 @@ me@brianketelsen.com
 @bketelsen
 
 * Distributed Communication
+
+- Development Servers
+- Introductions
+- Methods of communicating between applications
+- Transport and encoding options
+
+* Development Servers
+
+For use during class we'll provision three Digital Ocean Servers so you can experience real distributed application development.
+
+https://gophertrain.com/enroll -- Use course token "dcomsf"
+
+- Use your ssh public key -  cat ~/.ssh/id_rsa.pub | pbcopy on mac
+- For student/learning use only, for the duration of the course.
+
+* Introductions
+
+Let's get friendly!
+
+* Methods of Communication Between Applications
+
+There are infinite combinations of ways to communicate between running applications, but they boil down to two patterns:
+
+- Message Queue
+- Network Request/Response
+
+* Message Queue
+
+In the message queue pattern, a service on the network sends a message on a queue.  Another service listens to that queue and processes the message -- optionally sending a response on a special response queue.
+
+- RabbitMQ
+- NATS
+- NSQ 
+- countless others
+
+* Message Queue Pros/Cons
+
+Pros:
+
+- Simple to reason about communication - send a message on a topic.
+- No concern about who/what is receiving and processing the message.  Implicit trust in the queue.
+- Very scalable, 1 -> N subscribers processing the queue.
+- Many can be configured for message durability - guarantee message is saved.
+
+Cons:
+
+- One more thing to manage in your stack.
+- Requires special knowledge to maintain the queue service.
+- Without good monitoring, it's easy to lose messages.
+- Durability guarantees require more work for sysadmin & developers.
+
+* Exercise
+
+Message Queue 
+
+- ~/go/src/dcom/exercises/onenode/readme.txt
+- ~/go/src/dcom/exercises/logger/readme.txt
+
+* Transport and Encoding
+
+

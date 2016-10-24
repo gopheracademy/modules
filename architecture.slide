@@ -5,3 +5,14 @@ me@brianketelsen.com
 @bketelsen
 
 * Distributed Architecture
+
+* Choosing boundaries between your applications
+
+* Architectural patterns
+
+– Monolithic architecture
+– Three-tiered architecture
+– Request/response services
+– Nearline and offline services
+– Synchronous and asynchronous services
+– Database per service

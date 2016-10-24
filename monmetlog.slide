@@ -5,3 +5,9 @@ me@brianketelsen.com
 @bketelsen
 
 * Monitoring, Metrics, Logging
+
+* Determining what applications do while they run.
+* Metrics
+* Logging
+* Health checks
+* Combining instrumentation with spans

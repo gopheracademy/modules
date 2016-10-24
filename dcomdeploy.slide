@@ -5,3 +5,8 @@ me@brianketelsen.com
 @bketelsen
 
 * Deployment
+* Popular options for deploying distributed applications
+* Kubernetes
+* Mesos/Marathon
+* Docker Swarm
+* CoreOS/Fleet

@@ -5,3 +5,9 @@ me@brianketelsen.com
 @bketelsen
 
 * Service and Peer Discovery
+
+* Static configuration
+* Dynamically generated static configuration
+* Multicast DNS
+* Service registries
+* Hybrid
