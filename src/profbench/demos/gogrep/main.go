@@ -17,7 +17,7 @@ import (
 )
 
 func main() {
-	defer profile.Start(profile.TraceProfile).Stop()
+	defer profile.Start(profile.CPUProfile()).Stop()
 	duration := flag.Duration("timeout", 500*time.Millisecond, "timeout in milliseconds")
 	flag.Usage = func() {
 		fmt.Printf("%s by Brian Ketelsen\n", os.Args[0])

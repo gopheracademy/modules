@@ -15,7 +15,7 @@ me@brianketelsen.com
 
 For use during class we'll provision three Digital Ocean Servers so you can experience real distributed application development.
 
-https://gophertrain.com/enroll -- Use course token "dcomsf"
+https://gophertrain.com/enroll -- Choose class "Go + Distributed Computing"
 
 - Use your ssh public key -  cat ~/.ssh/id_rsa.pub | pbcopy on mac
 - For student/learning use only, for the duration of the course.
@@ -63,6 +63,106 @@ Message Queue
 - ~/go/src/dcom/exercises/onenode/readme.txt
 - ~/go/src/dcom/exercises/logger/readme.txt
 
-* Transport and Encoding
+* Communications Notes
+
+There is no hard and fast rule about communicating between your services.  You may even have to use multiple options to fit into your existing environment.  Write your code with this in mind:
+
+.play dcom/includes/inventory/transport/transporter.go
+
+This example service has an interface for serving the content that accepts a `net.Listener`.  Any network transport can satisfy this interface.
+
+* RPC
+
+There are many flavors of RPC, and the choice you make depends on the consumers of your service and what they can support.  
+
+- All Go based - Use net/rpc with `gob` encoding
+- Varied consumers - use a JSON RPC protocol like net/rpc/json
+
+* RPC
+
+RPC stands for Remote Procedure Call.  Many people have been jaded by previous implementations of RPC (Who remembers CORBA??), but it's very efficient now, and extremely useful in a distributed application architecture.
+
+* RPC Demo
+
+~/go/src/dcom/demos/{client/server}
+
+
+* Encoding
+
+You have an abundance of options for encoding your messages over the wire.  Once again, it's probably best to expect to be providing more than one encoding option for compatibility.
+
+- JSON
+- gob
+- protocol buffers
+- Thrift
+- Avro
+- more and more and more
+
+* Encoding
+
+Each encoding protocol has pros and cons, and potentially limits your consumers.
+
+	Recommendation:
+
+	Support JSON and protocol buffers
+
+JSON is the standard for interop *today* and protocol buffers are the *up-and-coming* star.
+
+* Protocol Buffers
+
+"Protocol buffers are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data – think XML, but smaller, faster, and simpler. You define how you want your data to be structured once, then you can use special generated source code to easily write and read your structured data to and from a variety of data streams and using a variety of languages."
+
+Protocol buffers are defined in .proto files, and then client/server code is *generated* by the protoc compiler, using plugins for different language implementations.
+
+* Protocol Buffers
+
+Protocol Buffers use numbered fields in their message definitions, which guarantees backwards compatibility.
+
+- You never modify existing fields
+- But you may add more fields to a message
+
+Old clients will continue to work, and new clients can use newer fields.  Server-side code is epected to handle both gracefully.
+
+
+* Protocol Buffers
+
+	message Person {
+		required string name = 1;
+		required int32 id = 2;
+		optional string email = 3;
+	} 
+
+Messages are strongly typed (unlike JSON), and there is a rich definition language for custom message types, optional fields, enumerations and more.
+
+* Protocol Buffers
+
+The only downside is that there is more tooling required to use protocol buffers as a developer.
+
+.link https://github.com/google/protobuf Protobuf Installation
+
+
+* Protocol Buffers
+
+By themselves, protocol buffers are a great choice for message encoding.  There are PB implementations for every major language and many of the minor ones.
+
+But as Billy Mays says... "BUT WAIT!! There's MORE!"
+
+* GRPC
+
+You can have the best of both worlds by using GRPC.
+
+.link http://grpc.io
+
+GRPC is a "high performance open source universal RPC framework".
+
+It uses protocol buffers to represent your messages *and* service definitions.
+
+GRPC also has a variety of plugins, including one that exposes your GRPC services as JSON/REST style services.  So you can have one source of truth for your service definitions and support fast RPC using GRPC or legacy systems with JSON/REST.
+
+* GRPC Exercise
+
+// TODO
+
+
 
 

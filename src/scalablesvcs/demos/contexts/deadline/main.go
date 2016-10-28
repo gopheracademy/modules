@@ -17,7 +17,7 @@ func main() {
 	// to return "150"
 	deadline, cf := context.WithDeadline(context.Background(), time.Now().Add(5*time.Second))
 	defer cf()
-	result := Random(deadline, 150, 10)
+	result := Random(deadline, 150, 10000)
 	if result.Err != nil {
 		fmt.Println("error:", result.Err)
 	}
