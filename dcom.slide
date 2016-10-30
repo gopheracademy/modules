@@ -161,7 +161,13 @@ GRPC also has a variety of plugins, including one that exposes your GRPC service
 
 * GRPC Exercise
 
-// TODO
+Together:
+
+Open $GOPATH/src/google.golang.org/grpc/examples/helloworld in two different terminals.
+
+Inspect the source code for the client and the server.
+
+Individually:  Run the server, then from another terminal run the client. (Use the same machine for both.)
 
 
 
