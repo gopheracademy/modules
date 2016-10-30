@@ -10,8 +10,8 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/gophertrain/modules/consensus/demos/raft/httpd"
-	"github.com/gophertrain/modules/consensus/demos/raft/store"
+	"consensus/demos/raft/httpd"
+	"consensus/demos/raft/store"
 )
 
 const (
