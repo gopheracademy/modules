@@ -72,12 +72,4 @@ The truth of the matter is you'll need more than one of these in a complex syste
 
 * Exercise
 
-Restart the consul cluster you created earlier:
-
-Start a consul cluster between your three machines.
-
-.link https://hub.docker.com/r/progrium/consul/ Use progrium/consul from docker
-
-Follow the directions at https://hub.docker.com/r/progrium/consul/ to create a consul cluster between your three nodes.
-
-
+.link src/disco/exercises/contextrpc/README.md

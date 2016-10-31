@@ -21,5 +21,5 @@ func main() {
 	s.RegisterService(new(HelloService), "")
 	http.Handle("/rpc", s)
 	fmt.Println("Listening")
-	http.ListenAndServe(":9876", nil)
+	http.ListenAndServe(":1234", nil)
 }
