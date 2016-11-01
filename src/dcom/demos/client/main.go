@@ -28,7 +28,7 @@ func main() {
 	// Asynchronous call
 	result := new(stringsvc.Result)
 	upperCall := client.Go("Upper.Uppercase", args, result, nil)
-	replyCall := <-upperCall.Done // will be equal to divCall
+	replyCall := <-upperCall.Done
 	if replyCall.Error != nil {
 		log.Fatal("async stringsvc error:", err)
 	}

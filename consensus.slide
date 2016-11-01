@@ -4,15 +4,19 @@ Brian Ketelsen
 me@brianketelsen.com
 @bketelsen
 
+Cory LaNou
+@corylanou
+
 * Consensus
 
 References:
 .link https://en.wikipedia.org/wiki/Consensus_(computer_science) Wikipedia Consensus
 
-* Sharing a common state across systems
-* Agreeing on changes across systems
-* Distributed consensus
-* Raft, Paxos, Zab
+- Sharing a common state across systems
+- Agreeing on changes across systems
+- Distributed consensus
+- Raft, Paxos, Zab
+
 * CAP theorem
 
 - [[https://en.wikipedia.org/wiki/Consistency_(database_systems)][Consistency]]
@@ -49,7 +53,20 @@ The short version is you need at least 3 for fault tolerance, and good practice 
 - Reading from the finite state machine on a node that isn't the leader (this is a dirty read)
 - Not calling `raft.Barrier` before reading to ensure all pending writes have applied.
 
+* Exercise
+
+Together:
+
+Walk through 
+    src/consensus/demos/raft
+
+Run it on a single server, then three servers
+
 * Using Etcd and Consul for distributed consensus
+
+You don't have to write your own consensus system.  You can use Consul or Etcd or Zookeeper as your storage engine for state.
+
+But if you use Raft, it isn't that hard and it possibly removes a layer of complexity from your system.
 
 * Prove it works
 
@@ -57,4 +74,4 @@ You should write your distributed software with the assumption your network is a
 
 Netflix forces their development team to address this:
 
-.link https://github.com/Netflix/SimianArmy/wiki/Chaos-Monkey Chaos Monkey
+.link https://github.com/Netflix/SimianArmy/wiki/Chaos-Monkey Chaos Monkey (now written in go)

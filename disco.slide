@@ -29,7 +29,7 @@ Pros:
 
 Cons:
 - DNS-SD doesn't route, so confined to one network segment without a special rebroadcasting node spanning segments.
-- Clients must poll for changes and reconnect when they detect a change in available servers.
+- Clients poll for changes, reconnect servers disappear.
 
 Example :  Apple's Bonjour protocol.
 .link https://github.com/hashicorp/mdns Hashicorp mdns
