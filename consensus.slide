@@ -28,6 +28,8 @@ References:
 
 * Building your own consensus using Go libraries
 
+.link https://raft.github.io raft
+
 We will use the HashiCorp raft library for our solution.
 
 raft is:
@@ -60,7 +62,7 @@ Together:
 Walk through 
     src/consensus/demos/raft
 
-Run it on a single server, then three servers
+Run it on as single server, then as three nodes (with different ports)
 
 * Using Etcd and Consul for distributed consensus
 
@@ -74,4 +76,5 @@ You should write your distributed software with the assumption your network is a
 
 Netflix forces their development team to address this:
 
-.link https://github.com/Netflix/SimianArmy/wiki/Chaos-Monkey Chaos Monkey (now written in go)
+.link https://github.com/Netflix/SimianArmy/wiki/Chaos-Monkey Chaos Monkey (now written in go - see below)
+.link https://github.com/Netflix/chaosmonkey new chaos monkey

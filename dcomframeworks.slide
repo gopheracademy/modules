@@ -51,8 +51,8 @@ Even though micro is more of a full-stack, you can still pick which backend tech
 - k/v store
 - metrics
 - service discovery
-- distributed locing
-- distributed tracing
+- distributed locking
+- distributed tracing -- interesting potential replacement for appdash/etc.
 - network transport
 
 * micro
@@ -72,3 +72,17 @@ Even though micro is more of a full-stack, you can still pick which backend tech
 `goa` was written by Raphael Simon from Rightscale.  In November 2015, I discovered it and jumped in with both feet contributing patches, features and plugins.  It's not really designed as a full distributed framework, but worth mentioning here because of its code generation engine.  With goa's `dslengine` package it's not too complicated to write a custom DSL to describe your microservices and then generate them from templates.
 
 `goa` 2.0 will be based on `grpc`
+
+* Exercise
+
+Explore go-micro
+
+.link https://github.com/micro/go-micro/tree/master/examples/service
+
+1.  Run the example service
+2.  Install the cli  https://github.com/micro/micro/tree/master/cli
+3.  Run the micro web dashboard https://github.com/micro/micro/tree/master/web
+4.  Explore and run the micro example services https://github.com/micro/micro/tree/master/examples using CLI and Web
+
+Together:  Run the micro slack bot: https://github.com/micro/micro/tree/master/bot
+

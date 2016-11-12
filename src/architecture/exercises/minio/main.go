@@ -16,8 +16,8 @@ SQS ARNs:  <none>
 
 func main() {
 	endpoint := "127.0.0.1:9000"
-	accessKeyID := "HID6B4S9ANGIGGW435G3"
-	secretAccessKey := "9HlelpHZNnjmXgLBB/CBofcuQUepbEX2sf0iv3DW"
+	accessKeyID := "81SWL1ZIVK596J52R0ID"
+	secretAccessKey := "ro0GIanW/HNHr1vyjKiWbX09Ms3zpu1BAwQSUD2G"
 	useSSL := false
 
 	// Initialize minio client object.

@@ -30,6 +30,8 @@ My *strong* opinion:
 
 armon/go-metrics will export to statsd, prometheus and others.
 
+.link https://github.com/armon/go-metrics go-metrics 
+
 * Health checks
 
 Every application should have a health check endpoint, either TCP or HTTP, that returns a known positive 
@@ -59,7 +61,7 @@ Return detailed failure information in a failing health check if possible.  For 
 Monitor externally from your application.   Preferably external to the nodes your services run on as well.
 
 - prometheus alertmanager
-- datadog
+- datadog -- many years of experience with DD, good team, good support.  Limits on how you can get your data back out
 - grafana alerts
 - etc
 
@@ -75,6 +77,14 @@ Recommendation:
 - Very low memory overhead / low allocations
 - HTTP Handler to allow you to change log level at RUNTIME
 - JSON or text output.  Use a flag to choose which level based on whether you're running locally or in production
+
+* Logging 
+
+Other popular options:
+
+- logrus
+- log15
+- go-kit's logger (based on log15)
 
 * Measuring & Logging
 
@@ -96,7 +106,7 @@ Demo of trace package
 
 * Exercise
 
-Instrument the raft implementation from the `consensus` library with `bketelsen/trace`.
+Instrument the raft implementation from the `consensus` module with `bketelsen/trace`.
 
 Don't do the whole thing.  Use a `trace` and an `eventlog` effectively in the `httpd` and `store`
 

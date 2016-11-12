@@ -60,8 +60,9 @@ func TestFibFib(t *testing.T) {
 	}
 }
 
-func BenchmarkFib2(b *testing.B) {
+/* func BenchmarkFib2(b *testing.B) {
 	for n := 0; n < b.N; n++ {
 		Fib2(20)
 	}
 }
+*/

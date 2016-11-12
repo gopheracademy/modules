@@ -32,8 +32,9 @@ func main() {
 	service.Name = "hello"
 	service.Address = ip
 	service.Port = 9876
-
-	client, err := api.NewClient(api.DefaultConfig())
+	conf := api.Config{}
+	conf.Address = "127.0.0.1:8500"
+	client, err := api.NewClient(&conf)
 	if err != nil {
 		panic(err)
 	}

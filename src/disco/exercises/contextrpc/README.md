@@ -9,6 +9,7 @@ Start a single consul node:
 
 $ docker run -p 8400:8400 -p 8500:8500 -p 8600:53/udp -h `hostname` progrium/consul -server -bootstrap -ui-dir /ui
 
+(This may not work for you if you're running older docker for mac. //FIXME with new instructions there.)
 
 Register the service in consul:
 
@@ -20,10 +21,13 @@ SERVER_IP=x.x.x.x ./server
 
 Run the `dig` command to see it in Consul's DNS:
 
-dig @127.0.0.1  hello.service.consul SRV    
+dig @127.0.0.1 -p 8600 hello.service.consul SRV    
 
 Run `curl` to see the consul API's registry version of the same record:
 
 curl http://127.0.0.1:8500/v1/catalog/services
+
+For more detailed information about the service, curl: 
+curl http://127.0.0.1:8500/v1/agent/services
 
 Modify the client to read the server address from the consul registry, then call the service
