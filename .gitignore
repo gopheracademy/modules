@@ -1,3 +1,8 @@
 .DS_Store
 bin/
 pkg/
+src/contexts/demos/contexts/cancellation/cancellation
+src/monmetlog/solutions/raft/raft
+src/wranglingconcurrency/demos/race/main
+src/wranglingconcurrency/demos/race/race
+
