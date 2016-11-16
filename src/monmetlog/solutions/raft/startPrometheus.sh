@@ -1,3 +1,3 @@
 #!/bin/bash
-docker run -d --net=host -v `pwd`/prometheus.yml:/etc/prometheus/prometheus.yml \
+docker run -d -p 9090:9090  -v `pwd`/prometheus.yml:/etc/prometheus/prometheus.yml \
        prom/prometheus

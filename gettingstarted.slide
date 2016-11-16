@@ -107,8 +107,11 @@ The Go Playground is a web service that runs on golang.org's servers. The servic
 There are limitations to the programs that can be run in the playground:
 
 The playground can use most of the standard library, with some exceptions. The only communication a playground program has to the outside world is by writing to standard output and standard error.
+
 In the playground the time begins at 2009-11-10 23:00:00 UTC (determining the significance of this date is an exercise for the reader). This makes it easier to cache programs by giving them deterministic output.
+
 There are also limits on execution time and on CPU and memory usage.
+
 Therefore: No file IO, nothing useful with time or dates, can't use any external packages.
 
 * The Go Playground

@@ -1,0 +1,54 @@
+sqlx Concepts
+
+Brian Ketelsen
+me@brianketelsen.com
+@bketelsen
+
+* sqlx Concepts
+
+* Basics
+
+Connecting
+
+A DB instance is not a connection, but an abstraction representing a Database. This is why creating a DB does not return an error and will not panic. It maintains a connection pool internally, and will attempt to connect when a connection is first needed. You can create an sqlx.DB via Open or by creating a new sqlx DB handle from an existing sql.DB via NewDb
+
+	var db *sqlx.DB
+	// exactly the same as the built-in
+	db = sqlx.Open("sqlite3", ":memory:")
+
+	// from a pre-existing sql.DB; note the required driverName
+	db = sqlx.NewDb(sql.Open("sqlite3", ":memory:"), "sqlite3")
+
+* Connect
+
+You may want to connect and ensure that your database is available at the same time:
+
+	var err error
+	// open and connect at the same time:
+	db, err = sqlx.Connect("sqlite3", ":memory:")
+
+	// open and connect at the same time, panicing on error
+	db = sqlx.MustConnect("sqlite3", ":memory:")
+
+
+
+* Exercise
+
+Read the rest of the overview of sqlx 
+.link http://jmoiron.github.io/sqlx/ sqlx overview
+
+* SQLX version of example
+
+Now let's look at a sqlx version of the first example we did.
+
+github.com/bketelsen/sqlx/sqlxquery
+
+That's a lot less code and a lot less work for you.
+
+* Exec Assignment
+
+github.com/bketelsen/sqlx/sqlxexec
+
+Finish the insertEmployee() function to insert Elvis into the employee database.
+
+

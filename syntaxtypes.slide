@@ -99,6 +99,8 @@ Go code is organized in packages. A package represents all the files in a single
 
 You've seen this already several times. Our examples so far have all used package "main" declared at the top of the file.
 
+* Code Organization
+
 Source files in a package must declare the package name at the top of the file as the first code statement:
 
 	// Package declaration
@@ -128,7 +130,7 @@ A GOPATH is a workspace for one or more Go projects.
 
 GOPATH is the root of the workspace and it contains three directories:
 
-.image syntaxtypes/images/gopath.png
+.image syntaxtypes/images/gopath.png  400 600 
 
 * Packages
 
@@ -144,13 +146,15 @@ All of this is important because your GOPATH is what determines how the go compi
 
 If your code lives at $GOPATH/src/blue/red, it's package name is "red" and you would import that code with the following statement:
 
-import "blue/red"
+	import "blue/red"
 
 We call "blue/red" the import path of the package.
 
 Packages that live in source code repositories like github and bitbucket have the full location of the repository as part of their import path. A project in my github repository called "captainhook" has the import path:
 
 	"github.com/bketelsen/captainhook"
+
+* Package Resolution
 
 Therefore in order to use that package in your code, that package MUST live at:
 
@@ -163,7 +167,9 @@ If captainhook were a library instead of an executable, when it's compiled, the 
 
 * Packages and GOPATH
 
-The vast majority of developers will use one GOPATH, set it as an environment variable and forget about it. However, it's possible to have "clean rooms" for different sets of projects or even an individual project by simply creating a new GOPATH and setting the environment variable to that new location.
+The vast majority of developers will use one GOPATH, set it as an environment variable and forget about it. 
+
+However, it's possible to have "clean rooms" for different sets of projects or even an individual project by simply creating a new GOPATH and setting the environment variable to that new location.
 
 * Exercise
 

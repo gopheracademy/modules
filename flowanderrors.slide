@@ -1,7 +1,47 @@
-Module Description
+Flow Control and Errors
 
 Brian Ketelsen
 me@brianketelsen.com
 @bketelsen
 
-* Module Description
+* Flow Control and Errors
+
+Go's control flow is very similar to C, but it has a few simplifications.
+
+	IF
+
+Go's if statements don't require parenthesis. They're easier to read, but you can add the parens if you want them for clarity in more complex statements.
+
+.link https://play.golang.org/p/ueu78zUTlY If Examples
+
+
+* If Statements
+
+It's idiomatic in go to skip the else where possible:
+
+.link https://play.golang.org/p/CVQ7IyLXWI Skipping Else
+
+* For
+
+There's a Go joke that goes like this:
+
+How do you spell "WHILE" in go? F O R
+
+There is one looping construct, the "for" statement.
+
+.link https://play.golang.org/p/t3_iEK-Mfp For Examples
+
+* SWITCH
+
+Go's switch statement is very powerful. Cases are evaluated top to bottom until the first match is found.
+
+.link https://play.golang.org/p/RR9BrDVV78 Switch Example
+
+.link https://play.golang.org/p/RR9BrDVV78 Another Switch Example
+
+* Type Switching
+
+One of the more common uses of the switch statement is when determining the type of an interface{} value. 
+
+.link https://play.golang.org/p/naOMQoygir Type Switching
+
