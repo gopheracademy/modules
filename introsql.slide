@@ -24,21 +24,13 @@ We'll use github.com/go-sql-driver/mysql in these exercises.
 
 Written by Baron Schwartz (VividCortex, Author of High Performance MySQL)
 
-* db/sql example
+* db/sql Exercise
 
-Example using standard library db/sql package
+Exercise using standard library db/sql package
 
-github.com/bketelsen/sqlx/dbsql/main.go
+	cd github.com/bketelsen/sqlx/dbsql
+	
+	look at source code
 
-* sqlx
+	make dockerrun
 
-Why sqlx?
-
-Now that you've seen how to do it the hard way, we're going to learn how to use sqlx, which is a set of extensions on top of db/sql intended to make it easier to use without being magic or surprising.
-
-Features that make it worthwhile:
-
-- Marshal rows into structs (with embedded struct support), maps, and slices
-- Named parameter support including prepared statements
-- Get and Select to go quickly from query to struct/slice
-- Just the first one is enough reason to use sqlx - scanning fields into structs is a pain in Go.
