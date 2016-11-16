@@ -77,7 +77,7 @@ DEMO:
 
 DEMO: 
 
-.link ../src/contexts/demos/contexts/timeout/main.go
+.link ../src/contexts/demos/contexts/timeouts/main.go
 
 
 * Timeout vs. Deadline
