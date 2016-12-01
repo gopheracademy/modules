@@ -12,11 +12,17 @@ Functions are declared with the "func" keyword.
 
 Functions have a name, optional input parameters, and optional return values.
 
-.link https://play.golang.org/p/5BvwTK-r3_ Function Examples
+- Function Examples
+
+	cd $GOPATH/src/github.com/gophertrain/material/funcmethodsinterfaces/demos/funcs
+	go run main.go
 
 Functions are first-class types in Go. You can assign a function to a variable, you can pass functions as parameters.
 
-.link https://play.golang.org/p/zVpnv6Ub8q  Function Values
+- Function Values
+
+	cd $GOPATH/src/github.com/gophertrain/material/funcmethodsinterfaces/demos/funcvalues
+	go run main.go
 
 * Methods
 
@@ -34,13 +40,20 @@ These are equivalent in functionality, but one of them is much more clear.
 
 Methods can be declared on any named type. Use a pointer receiver when you want to modify the existing type. Use a value receiver when you don't need to modify the type.
 
-.link https://play.golang.org/p/ovMH0wrl4B  Method Example
+- Method Example
+
+	cd $GOPATH/src/github.com/gophertrain/material/funcmethodsinterfaces/demos/method
+	go run main.go
+
 
 Methods are First Class Citizens in Go
 
 That means you can create variables of type method, assign to them, and operate on those variables.
 
-.link https://play.golang.org/p/MNI1jR8Ets First Class Methods
+- First Class Methods 
+
+	cd $GOPATH/src/github.com/gophertrain/material/funcmethodsinterfaces/demos/firstmethod
+	go run main.go
 
 * Interfaces
 
@@ -83,7 +96,10 @@ By these patterns, you can see that interfaces are intended to represent a small
 
 * Interfaces in Practice
 
-.link https://play.golang.org/p/CaBE4Z8-VR Interfaces Example
+- Interface Example
+
+	cd $GOPATH/src/github.com/gophertrain/material/funcmethodsinterfaces/demos/interfaces
+	go run main.go
 
 * The Empty Interface
 
@@ -93,19 +109,26 @@ If you declare an interface with an empty set of functions, then any type will s
 
 In Go we use the empty interface to represent "anything".
 
-.link https://play.golang.org/p/CQAma1uNjm  Empty Interface Example
+- Empty Interface Example
+
+	cd $GOPATH/src/github.com/gophertrain/material/funcmethodsinterfaces/demos/empty
+	go run main.go
 
 * Type Assertions
 
 That's pretty powerful. You can pass any type around without losing the type safety. But when you receive an "interface{}" how do you know what to do with it?
 
-.link https://play.golang.org/p/rgCFN6ZiWI  Type Assertions
+- Type Assertion Example
+
+	cd $GOPATH/src/github.com/gophertrain/material/funcmethodsinterfaces/demos/assert
+	go run main.go
 
 * Exercise
 
 Fix the last example to recognize and print the float value.
 
-.link https://play.golang.org/p/rgCFN6ZiWI  Type Assertions
+	cd $GOPATH/src/github.com/gophertrain/material/funcmethodsinterfaces/exercises/assert
+	go run main.go
 
 
 

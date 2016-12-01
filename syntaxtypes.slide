@@ -40,11 +40,21 @@ string and bool
 
 * Declaring and Assigning Values to Variables
 
-.link https://play.golang.org/p/tGebcJOkMU Without initialization
+Without initialization
 
-.link https://play.golang.org/p/6OscW3ND_a With initialization, explicit type
+	cd $GOPATH/src/github.com/gophertrain/material/syntaxtypes/demos/withoutinit
+	go run main.go
 
-.link https://play.golang.org/p/_n687uaFKS  With initialization, implicit type
+
+With initialization, explicit type
+
+	cd $GOPATH/src/github.com/gophertrain/material/syntaxtypes/demos/explicit
+	go run main.go
+
+With initialization, implicit type
+
+	cd $GOPATH/src/github.com/gophertrain/material/syntaxtypes/demos/implicit
+	go run main.go
 
 All three produce an integer that is indistinguishable from the others. With the implicit declaration, the compiler determines the type of the variable at compile time (not run time).
 
@@ -52,33 +62,44 @@ All three produce an integer that is indistinguishable from the others. With the
 
 All builtin types have a zero value. Any allocated variable is usable even if it never has a value assigned.
 
-.link https://play.golang.org/p/6w6hBNE75a  Zero Value Example
-
+	cd $GOPATH/src/github.com/gophertrain/material/syntaxtypes/demos/zero
+	go run main.go
 
 * Constants
 
 Constants are variables that can't be modified at run time.
 
-.link https://play.golang.org/p/0SxwvrmIby Constant String Example
+	cd $GOPATH/src/github.com/gophertrain/material/syntaxtypes/demos/constantstring
+	go run main.go
 
-.link https://play.golang.org/p/RzPhgJCVfz Constant Number Example
+	cd $GOPATH/src/github.com/gophertrain/material/syntaxtypes/demos/constantnumber
+	go run main.go
 
-.link https://play.golang.org/p/QbMYFA0a4i  Modifying Constants Example - Fail!
+Modifying Constants Example - Fail!
 
+	cd $GOPATH/src/github.com/gophertrain/material/syntaxtypes/demos/modifyconst
+	go run main.go
 
 * Iota
 
 Sometimes you want to declare constants that follow a sequence:
 
-.link https://play.golang.org/p/VHC_gnGT0q Sequence of Constants
+	cd $GOPATH/src/github.com/gophertrain/material/syntaxtypes/demos/sequence
+	go run main.go
 
 That's sort of ugly. Go gives us a compile time helper called iota that lets you skip the repetition:
 
-.link https://play.golang.org/p/0wVWmM_3T1 Sequence with Iota
+Sequence with Iota
+
+	cd $GOPATH/src/github.com/gophertrain/material/syntaxtypes/demos/iota
+	go run main.go
 
 Notice the difference between the two versions? Iota always starts at 0.
 
-.link https://play.golang.org/p/miy_1WJx_e Skip the first value of iota
+Skip the first value of iota
+
+	cd $GOPATH/src/github.com/gophertrain/material/syntaxtypes/demos/iotaskip
+	go run main.go
 
 * Structs
 
@@ -87,10 +108,12 @@ A struct is a collection of fields.
 
 Structs are types with zero or more fields.
 
-.link https://play.golang.org/p/TAX6NpPaEu Struct Example
+Struct Example:
 
-Fields in a struct are called members. Access them using a period and the field name.
+	cd $GOPATH/src/github.com/gophertrain/material/syntaxtypes/demos/structs
+	go run main.go
 
+Fields in a struct are called members. Reference them using a period and the field name.
 
 
 * Code Organization

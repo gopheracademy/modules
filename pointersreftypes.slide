@@ -8,13 +8,21 @@ me@brianketelsen.com
 
 Arrays have a fixed length and fixed data type.
 
-.link https://play.golang.org/p/2D24t6fbW_ Array Example
+- Array Example
+
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/arrays
+	go run main.go
+
 
 * Iterating
 
 Iterate over the array using a for loop
 
-.link https://play.golang.org/p/BQlB_6U75S Iterate with For
+- Iterate with For
+
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/arrays
+	go run main.go
+
 
 For is the only loop construct in Go. Use it for FOR, WHILE, DO WHILE, DO UNTIL, etc.
 
@@ -22,15 +30,18 @@ For is the only loop construct in Go. Use it for FOR, WHILE, DO WHILE, DO UNTIL,
 
 You can also iterate over any collection in Go using the range statement. Range is a built-in iterating function that returns the index and value of many different collection types, including arrays:
 
-.link https://play.golang.org/p/Rh19WoUoDn Iterate with Range
+- Iterate with Range
+
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/arrays
+	go run main.go
 
 Range is very powerful, you'll use it often.
 
 * Exercise 
 
-Modify this example to iterate over the array using a range statement, and print the value of the array multiplied by 2.
+modify this example to iterate over the array using a range statement, and print the value of the array multiplied by 2.
 
-.link https://play.golang.org/p/Rh19WoUoDn Example
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/exercises/range
 
 hint: do the multiplication inside the fmt.Println() function.
 
@@ -41,7 +52,11 @@ An array has a fixed size. A slice, on the other hand, is a dynamically-sized, f
 
 Unless you know that your list will contain a finite and fixed set of elements, you'll almost always use a slice when dealing with data.
 
-.link https://play.golang.org/p/iD6Tc0RK7K Slice Examples
+- Slice Examples 
+
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/slice
+	go run main.go
+
 
 * Why slices?
 
@@ -60,7 +75,10 @@ Slices don't have a length in the declaration:
 
 We've shown using append to add values to a slice but you can also declare the entire slice with its values at once:
 
-.link https://play.golang.org/p/BSNAUj2pd- Slice Inline Declaration
+- Slice Inline Declaration
+
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/slice
+	go run main.go
 
 
 * Strings
@@ -69,7 +87,10 @@ Strings are Slices of Bytes
 
 A string is just a slice of bytes. Go has built-in support for UTF-8, and strong tools for working with non-ascii characters. While ASCII characters all take up only a single byte UTF-8 characters (or Runes) may be up to 4 bytes. Go allows you to easily handle multi-byte runes.
 
-.link https://play.golang.org/p/W3c_iWsvqj Rune Example
+- Rune Example 
+
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/runes
+	go run main.go
 
 * Maps
 
@@ -79,15 +100,20 @@ Maps must be initialized before they can be used.
 
 Initialize a map with the make() function.
 
-.link https://play.golang.org/p/MynExgeWVt Map Example
+- Map Example 
+
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/maps
+	go run main.go
+
 
 * Maps
 
 Map keys must define the "==" and "!=" operators. therefore you can't use functions, maps or slices as the keys in your maps.
 
-Maps can be declared inline too:
+- Maps can be declared inline too:
 
-.link https://play.golang.org/p/i2Hm91N6on Inline Map Declaration
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/mapsinline
+	go run main.go
 
 * Map Concurrency
 
@@ -99,13 +125,19 @@ Prior to Go 1.7, concurrent access to a map would just cause your program to be 
 
 Go lets you pass function parameters by value or by reference. You will generally pass by value when the type is short lived and won't be used after the function call.
 
-.link https://play.golang.org/p/FsHLQA0srM Pass by Value Example
+- Pass by Value Example
+
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/passbyval
+	go run main.go
 
 Notice that we didn't modify the value that was passed in, we created a new integer and returned that as the result.
 
 If you want to operate on a value and have it modified during the operation, pass it by reference using a pointer:
 
-.link https://play.golang.org/p/7TamGrabcx Pass by Reference Example
+- Pass by Reference Example
+
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/passbyref
+	go run main.go
 
 * Pointer Dereferencing
 
