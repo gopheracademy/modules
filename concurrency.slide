@@ -16,7 +16,10 @@ Goroutines aren't threads. They're smaller, lighter, and less resource intensive
 
 To create a goroutine, simply prepend the "go" keyword before a function call.
 
-.link https://play.golang.org/p/iOp6UmJDux  Create Goroutine
+- Create Goroutine
+
+	cd $GOPATH/src/github.com/gophertrain/material/concurrency/demos/goroutine/
+	go run main.go
 
 Why didn't that work?
 
@@ -32,7 +35,10 @@ We typically do that with channels or waitgroups, depending on whether you need 
 
 WaitGroups are defined in the "sync" package in the standard library. They're a simple and powerful way to ensure that all of the goroutines you launch have completed before you move on to do other things.
 
-.link https://play.golang.org/p/_qd0nXF0fF  Waitgroup Example
+- Waitgroup Example
+
+	cd $GOPATH/src/github.com/gophertrain/material/concurrency/demos/waitgroup/
+	go run main.go
 
 WaitGroups are also especially powerful when combined with closures (anonymous functions)
 
@@ -77,7 +83,7 @@ If no operations inside a select statement can process, the select will block. T
 
 Read Dave Cheney's article on some of the more interesting properties of channels.
 
-.link dave.cheney.net/2013/04/30/curious-channels Curious Channels
+.link https://dave.cheney.net/2013/04/30/curious-channels Curious Channels
 	
 
 
