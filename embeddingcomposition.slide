@@ -8,19 +8,29 @@ me@brianketelsen.com
 
 Go doesn't do the typical Object Oriented inheritance. Instead Go lets you "borrow" smaller pieces of functionality and embed them into larger types. This is called Composition.
 
-.link https://play.golang.org/p/wAV3xnKj60  Composition Example
+- Composition
+
+	cd $GOPATH/src/github.com/gophertrain/material/embeddingcomposition/demos/embedding/
+	go run main.go
 
 * Composition
 
 Composition works with Interfaces too:
 
-.link https://play.golang.org/p/_MiwwXZbVI  Embedded Types Interface Example
+- Embedded Types Interface Example
+
+	cd $GOPATH/src/github.com/gophertrain/material/embeddingcomposition/demos/embedding/
+	go run main.go
+
 
 * Composition
 
 Put composition, interfaces and embedding together to get a powerful abstraction:
 
-.link https://play.golang.org/p/QnkL-UIVJN Composition, Interfaces, Embedding Example
+- Composition, Interfaces, Embedding Example
+
+	cd $GOPATH/src/github.com/gophertrain/material/embeddingcomposition/demos/embedding/
+	go run main.go
 
 * Important
 
@@ -30,7 +40,7 @@ Interfaces aren't explicitly declared, they're checked at compile time. You don'
 
 Using interfaces is a confusing change from traditional OO programming concepts. After some time, you'll find them refreshing. You create types that implement behaviors, and create functions that operate on things that implement those behaviors.
 
-Let's go back and look at that example again and reason out loud how we'd do that in Java with abstract classes and interfaces.
+Let's go back and look at that example again and reason out loud how we'd do that in Java/Ruby with abstract classes and interfaces.
 
 It's a lot easier to keep the Go version in your head.
 
@@ -42,5 +52,18 @@ Transport -> Wheeled -> Car -> Sedan
 
 We create behaviors and apply them to types:
 
-.link https://play.golang.org/p/sdJbUKtQ7C  Interface Example
+- Behaviors
 
+	cd $GOPATH/src/github.com/gophertrain/material/embeddingcomposition/demos/behaviors/
+	go run main.go
+
+
+* Exercise
+
+Modify the *behaviors* demo to add another type of transportation, implementing the Storer interface.
+
+
+- Behaviors
+
+	cd $GOPATH/src/github.com/gophertrain/material/embeddingcomposition/exercises/behaviors/
+	go run main.go
