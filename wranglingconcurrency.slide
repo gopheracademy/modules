@@ -149,7 +149,8 @@ Big Example:
 
 * gogrep walkthrough
 
-.link ../src/wranglingconcurrency/demos/gogrep/gogrep.go
+	cd $GOPATH/src/wranglingconcurrency/demos/gogrep/
+
 
 * Mutexes
 
@@ -186,14 +187,13 @@ By far, data races are the hardest to debug problems you'll come across. Why?
 Fortunately, Go has built-in race detection tools.  The `go` command has a `-race` flag that can be applied to:
 
 - go test
-- go run
 - go build
 - go install
 
 
 * Race Example
 
-.link ../src/wranglingconcurrency/demos/race/main.go
+	cd $GOPATH/src/wranglingconcurrency/demos/race/
 
 * Race Exercise
 
@@ -203,14 +203,17 @@ Run the race example in `src/wranglingconcurrency/demos/race/`
 
 What happens?
 
-Now run with the `-race` flag.
+Now build with the `-race` flag.
+
+	go build  -race .
+	./race
 
 What results do you get?
 
 
 * Race Exercise - Individual Exercise
 
-Fix the race example in `src/wranglingconcurrency/exercises/race/` using tools you have learned in this module.  Test it by running with the `-race` flag.
+Fix the race example in `src/wranglingconcurrency/exercises/race/` using tools you have learned in this module.  Test it by building then running with the `-race` flag.
 
 	Never ship a binary built with `-race`.
 	It will use many times more memory and be significantly slower.

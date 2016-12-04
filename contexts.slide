@@ -31,13 +31,14 @@ Why?
 
 .link https://golang.org/pkg/context/#WithCancel
 
-.link ../src/contexts/demos/contexts/cancellation/main.go
 
-* Cancellation Walkthrough
+- Cancellation
 
-DEMO: 
+	cd $GOPATH/src/github.com/gophertrain/material/contexts/demos/cancellation/
+	go run main.go
 
-.link ../src/contexts/demos/contexts/cancellation/main.go
+
+-  Cancellation Walkthrough
 
 _Note_: the defer cf()
 
@@ -68,17 +69,17 @@ You can fix this by providing a deadline.  Deadlines are propagated through the 
 
 * Deadline
 
-DEMO: 
+- Deadline Walkthrough
 
-.link ../src/contexts/demos/contexts/deadline/main.go
-
+	cd $GOPATH/src/github.com/gophertrain/material/contexts/demos/deadline/
+	go run main.go
 
 * Timeout
 
-DEMO: 
+- Deadline Walkthrough
 
-.link ../src/contexts/demos/contexts/timeouts/main.go
-
+	cd $GOPATH/src/github.com/gophertrain/material/contexts/demos/timeouts/
+	go run main.go
 
 * Timeout vs. Deadline
 
@@ -92,7 +93,7 @@ Use the one that feels comfortable to you.
 
 * Exercise
 
-	src/contexts/demos/contexts
+	cd $GOPATH/src/github.com/gophertrain/material/contexts/demos
 
 Exercise:
 	Open each of the demos in the contexts directory.
@@ -126,6 +127,10 @@ Now keys are scoped to the package.  Even though the "value" of the key is an in
 
 * Exercise
 
-.link src/contexts/exercises/contextrpc
+- Context RPC
+
+	cd $GOPATH/src/github.com/gophertrain/material/contexts/exercises/contextrpc/
+	go run main.go
+
 
 Follow the instructions in the Readme text file to change the RPC application to handle timeouts.

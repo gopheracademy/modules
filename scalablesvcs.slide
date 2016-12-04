@@ -29,7 +29,8 @@ Why?
 
 .link https://golang.org/pkg/context/#WithCancel
 
-.link ../src/scalablesvcs/demos/contexts/cancellation/main.go
+	cd $GOPATH/src/scalablesvcs/demos/contexts/cancellation/
+	go run main.go
 
 * Cancellation Walkthrough
 
@@ -149,7 +150,7 @@ This will give you a baseline of what the function costs and what the function c
 
 * Throughput Demo
 
-	src/scalablesvcs/demos/throughput
+	cd $GOPATH/src/github.com/gophertrain/material/scalablesvcs/demos/throughput
 
 * Throughput in CI
 
@@ -249,7 +250,8 @@ Do these together. Wrap one of these:
 and include logging.
 
 .link https://github.com/bketelsen/trace
-
+	
+	see @rakyll's new package - getting better
 
 * Wrapup
 
