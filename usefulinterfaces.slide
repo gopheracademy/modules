@@ -101,7 +101,7 @@ To make it easy to isolate and test each individual package you should create mo
 
 * Practical Interfaces - Exercise 1
 
-In the *$GOPATH/src/github.com/gophertrain/usefulinterfaces* directory there's a folder called *impl*
+In the *$GOPATH/src/github.com/gophertrain/material/usefulinterfaces/exercises* directory there's a folder called *impl*
 
 	cd impl
 	cat interface.go
