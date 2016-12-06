@@ -28,7 +28,7 @@ Written by Baron Schwartz (VividCortex, Author of High Performance MySQL)
 
 Exercise using standard library db/sql package
 
-	cd github.com/bketelsen/sqlx/dbsql
+	cd $GOPATH/src/github.com/bketelsen/sqlx/dbsql
 	
 	look at source code
 

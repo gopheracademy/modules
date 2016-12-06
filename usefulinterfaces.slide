@@ -80,7 +80,7 @@ For compatibility with other systems, the inventory application will offer consu
 Therefore we'll have a package *transport* containing an *rpc* package and an *http* package.
 
 
-* Package Organization - Interfaces
+* Package Organization - Interface
 
 PRO TIP:
 
@@ -101,7 +101,7 @@ To make it easy to isolate and test each individual package you should create mo
 
 * Practical Interfaces - Exercise 1
 
-In the *src/usefulinterfaces* directory there's a folder called *impl*
+In the *$GOPATH/src/github.com/gophertrain/usefulinterfaces* directory there's a folder called *impl*
 
 	cd impl
 	cat interface.go
@@ -112,7 +112,7 @@ Now install the *impl* tool:
 
 Try it out:
 
-	$ impl 'c *CustomerService' impl.CustomerGetter
+	$ impl 'c *CustomerService' github.com/gophertrain/material/usefulinterfaces/impl.CustomerGetter
 
 You should see output like this:
 
@@ -123,14 +123,14 @@ You should see output like this:
 That's very useful for both implementing the actual service and implementing the mocks.  But it outputs to *stdout*.  Let's make a postgres implementation of the CustomerGetter service:
 
 
-	impl 'c *CustomerService' impl.CustomerGetter > postgres/customer.go
+	impl 'c *CustomerService' {full gopath}/impl.CustomerGetter > postgres/customer.go
 
 The postgres folder already exists, if it didn't you'd have to create it first.
 
 Now make an implementation for a mock of the CustomerGetter:
 
 	mkdir mocks
-	impl 'c *CustomerService' impl.CustomerGetter > mocks/customer.go
+	impl 'c *CustomerService' {full gopath}impl.CustomerGetter > mocks/customer.go
 
 *impl* generates the methods for a type that doesn't exist.  To finish the implementation, you need to add a type called *CustomerService*.
 
@@ -141,7 +141,7 @@ Now your code should compile.
 
 * Practical Interfaces - Example Application
 
-	$ cd $GOPATH/usefulinterfaces/demos/inventory
+	$ cd $GOPATH/src/github.com/gophertrain/material/usefulinterfaces/demos/inventory
 
 In the root package *inventory* there are three domain objects:
 
@@ -211,7 +211,7 @@ PROTIP:
 
 Prove that your type implements an interface at compile time with this declaration:
 
-`src/usefulinterfaces/demos/inventory/transport/http/rest.go`
+`src/github.com/gophertrain/material/usefulinterfaces/demos/inventory/transport/http/rest.go`
 
 .code usefulinterfaces/demos/inventory/transport/http/rest.go /START OMIT/,/END OMIT/
 
@@ -227,7 +227,7 @@ By doing this, your code won't compile if the *RESTService* doesn't implement th
 
 Now with interfaces all defined and (mostly) implemented, we can tie it all together in *main.go*
 
-`src/usefulinterfaces/demos/inventory/cmd/main.go`
+`src/github.com/gophertrain/material/usefulinterfaces/demos/inventory/cmd/main.go`
 
 Because the network services take interfaces, we can easily swap out storage drivers when changing databases, or more commonly, for testing.
 
@@ -310,7 +310,7 @@ Interface Guidelines:
 
 * Exercise
 
-*src/usefulinterfaces/exercises/inventory* contains a *mocks* folder.
+*src/github.com/gophertrain/material/usefulinterfaces/exercises/inventory* contains a *mocks* folder.
 
 Create a file in the mocks directory that implements the OrderStorage interface.
 

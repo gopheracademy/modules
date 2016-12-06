@@ -11,18 +11,7 @@ me@brianketelsen.com
 - Methods of communicating between applications
 - Transport and encoding options
 
-* Development Servers
 
-For use during class we'll provision three Digital Ocean Servers so you can experience real distributed application development.
-
-https://gophertrain.com/enroll -- Choose class "Go + Distributed Computing"
-
-- Use your ssh public key -  cat ~/.ssh/id_rsa.pub | pbcopy on mac
-- For student/learning use only, for the duration of the course.
-
-* Introductions
-
-Let's get friendly!
 
 * Methods of Communication Between Applications
 
@@ -60,8 +49,8 @@ Cons:
 
 Message Queue 
 
-- ~/go/src/dcom/exercises/onenode/readme.txt
-- ~/go/src/dcom/exercises/logger/readme.txt
+- $GOPATH/src/github.com/gophertrain/material/dcom/exercises/onenode/readme.txt
+- $GOPATH/src/github.com/gophertrain/material/dcom/exercises/logger/readme.txt
 
 * Communications Notes
 
@@ -84,7 +73,7 @@ RPC stands for Remote Procedure Call.  Many people have been jaded by previous i
 
 * RPC Demo
 
-~/go/src/dcom/demos/{client/server}
+$GOPATH/src/github.com/gophertrain/material/dcom/demos/{client/server}
 
 
 * Encoding

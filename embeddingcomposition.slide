@@ -19,7 +19,7 @@ Composition works with Interfaces too:
 
 - Embedded Types Interface Example
 
-	cd $GOPATH/src/github.com/gophertrain/material/embeddingcomposition/demos/embedding/
+	cd $GOPATH/src/github.com/gophertrain/material/embeddingcomposition/demos/interfaces/
 	go run main.go
 
 
@@ -29,7 +29,7 @@ Put composition, interfaces and embedding together to get a powerful abstraction
 
 - Composition, Interfaces, Embedding Example
 
-	cd $GOPATH/src/github.com/gophertrain/material/embeddingcomposition/demos/embedding/
+	cd $GOPATH/src/github.com/gophertrain/material/embeddingcomposition/demos/both/
 	go run main.go
 
 * Important

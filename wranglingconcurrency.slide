@@ -149,8 +149,7 @@ Big Example:
 
 * gogrep walkthrough
 
-	cd $GOPATH/src/wranglingconcurrency/demos/gogrep/
-
+	go get github.com/bketelsen/gogrep
 
 * Mutexes
 
@@ -193,11 +192,11 @@ Fortunately, Go has built-in race detection tools.  The `go` command has a `-rac
 
 * Race Example
 
-	cd $GOPATH/src/wranglingconcurrency/demos/race/
+	cd $GOPATH/src/github.com/gophertrain/material/wranglingconcurrency/demos/race/
 
 * Race Exercise
 
-Run the race example in `src/wranglingconcurrency/demos/race/`
+Run the race example in `src/github.com/gophertrain/material/wranglingconcurrency/demos/race/`
 
 	go run main.go
 
@@ -213,7 +212,7 @@ What results do you get?
 
 * Race Exercise - Individual Exercise
 
-Fix the race example in `src/wranglingconcurrency/exercises/race/` using tools you have learned in this module.  Test it by building then running with the `-race` flag.
+Fix the race example in `src/github.com/gophertrain/material/wranglingconcurrency/exercises/race/` using tools you have learned in this module.  Test it by running with the `-race` flag.
 
 	Never ship a binary built with `-race`.
 	It will use many times more memory and be significantly slower.
@@ -225,4 +224,5 @@ Go's concurrency features are among the easiest to use in any programming langua
 - Learn Channel behavior.  All of it.
 - Use sync.WaitGroup and sync.ErrGroup to make your life easier
 - Use mutexes for simple protection
-- Use the race detector locally when you build and test your code. (But not in the final binary)
+- Use the race detector locally when you build and test your code. (But not in the final binary) 
+- Add -race to your `go test` scripts, especially in your CI pipeline.

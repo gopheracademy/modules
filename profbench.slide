@@ -439,7 +439,7 @@ Viewing the trace:
         2016/08/13 17:01:06 Opening browser
 
 DEMO:
-	src/profbench/demos/gogreptrace
+	cd $GOPATH/src/github.com/gophertrain/material/profbench/demos/gogreptrace
         go tool trace trace.out
 
 Bonus: [[https://github.com/pkg/profile/releases/tag/v1.2.0][`github.com/pkg/profile`]] supports generating trace profiles.
@@ -450,7 +450,7 @@ Bonus: [[https://github.com/pkg/profile/releases/tag/v1.2.0][`github.com/pkg/pro
 
 Profile gogrep using your choice:
 
-	src/profbench/exercises/gogrep
+	cd $GOPATH/src/github.com/gophertrain/material/profbench/exercises/gogrep
 
 
 - pprof

@@ -244,7 +244,6 @@ $ go get github.com/micro/protobuf/{proto,protoc-gen-go}
 The registry provides a service discovery mechanism to resolve names to addresses. It can be backed by consul, etcd, zookeeper, dns, gossip, etc. Services should register using the registry on startup and deregister on shutdown. Services can optionally provide an expiry TTL and reregister on an interval to ensure liveness and that the service is cleaned up if it dies.
 
 Default: consul 
-.link http://students.brianketelsen.com:8500/ui
 
 Documentation https://godoc.org/github.com/micro/go-micro/registry
 

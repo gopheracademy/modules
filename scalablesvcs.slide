@@ -155,7 +155,7 @@ This will give you a baseline of what the function costs and what the function c
 * Throughput in CI
 
 
-	src/scalablesvcs/demos/throughput/Makefile
+	cd $GOPATH/src/github.com/gophertrain/material/scalablesvcs/demos/throughput/Makefile
 
 	$ make compare	
 	 

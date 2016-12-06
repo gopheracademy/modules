@@ -10,7 +10,7 @@ Arrays have a fixed length and fixed data type.
 
 - Array Example
 
-	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/arrays
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/array
 	go run main.go
 
 
@@ -20,7 +20,7 @@ Iterate over the array using a for loop
 
 - Iterate with For
 
-	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/arrays
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/array
 	go run main.go
 
 
@@ -32,7 +32,7 @@ You can also iterate over any collection in Go using the range statement. Range 
 
 - Iterate with Range
 
-	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/arrays
+	cd $GOPATH/src/github.com/gophertrain/material/pointersreftypes/demos/array
 	go run main.go
 
 Range is very powerful, you'll use it often.
