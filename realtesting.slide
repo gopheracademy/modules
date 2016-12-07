@@ -24,7 +24,7 @@ In this section we’ll use real-world code from open source Go projects as we l
 
 Internal tests share the same package name as the package being tests.  External tests use the package name with `_test` at the end.
 
-External tests see the tested package as if it were an external package, so they follow the same rules of bisibility that Go's packages do.   
+External tests see the tested package as if it were an external package, so they follow the same rules of visibility that Go's packages do.   
 
 In general, use internal tests unless an external test is required to break a dependency cycle.
 
