@@ -112,7 +112,7 @@ Now install the *impl* tool:
 
 Try it out:
 
-	$ impl 'c *CustomerService' github.com/gophertrain/material/usefulinterfaces/impl.CustomerGetter
+	$ impl 'c *CustomerService' github.com/gophertrain/material/usefulinterfaces/exercises/impl.CustomerGetter
 
 You should see output like this:
 
